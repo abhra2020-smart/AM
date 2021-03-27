@@ -61,7 +61,4 @@ class Lexer:
         if number_str.endswith('.'):
             number_str += '0'
 
-        try:
-            return Token(TokenType.NUMBER, int(number_str))
-        except:
-            return Token(TokenType.NUMBER, float(number_str))
+        return Token(TokenType.NUMBER, float(number_str))
