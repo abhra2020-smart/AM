@@ -8,6 +8,9 @@ class NumberNode:
     def __repr__(self):
         return f"{self.value}"
 
+    def __add__(self, other):
+        return self.value + other.value
+
 
 @dataclass
 class AddNode:
@@ -16,6 +19,24 @@ class AddNode:
 
     def __repr__(self):
         return f"({self.node_a}+{self.node_b})"
+
+
+@dataclass
+class PowerNode:
+    node_a: any
+    node_b: any
+
+    def __repr__(self):
+        return f"({self.node_a}^{self.node_b})"
+
+
+@dataclass
+class ModNode:
+    node_a: any
+    node_b: any
+
+    def __repr__(self):
+        return f"({self.node_a}%{self.node_b})"
 
 
 @dataclass
