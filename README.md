@@ -3,7 +3,7 @@ The FlowLang programming language.
 
 This language now supports basic math.                                                                                                                                           
 
-Supported operators:
+Supported operators:                                                                                                                                                             
 `+`                                                                                                                                                                             
 `-`                                                                                                                                                                             
 `*`                                                                                                                                                                             
