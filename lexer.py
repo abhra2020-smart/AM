@@ -62,7 +62,7 @@ class Lexer:
                 decimal_point_count += 1
                 type_ = float
                 if decimal_point_count > 1:
-                    break
+                    raise SyntaxError('Invalid syntax')
 
             number_str += self.current_char
             self.advance()
