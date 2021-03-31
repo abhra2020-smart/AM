@@ -12,6 +12,7 @@ class TokenType(Enum):
     RPAREN = 6
     POWER = 7
     MOD = 8
+    INTDIV = 9
 
 
 @dataclass

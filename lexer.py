@@ -45,17 +45,22 @@ class Lexer:
             elif self.current_char == '%':
                 self.advance()
                 yield Token(TokenType.MOD)
+            elif self.current_char == '|':
+                self.advance()
+                yield Token(TokenType.INTDIV)
             else:
                 raise Exception(f"Illegal character '{self.current_char}'")
 
     def generate_number(self):
         decimal_point_count = 0
         number_str = self.current_char
+        type_ = int
         self.advance()
 
         while self.current_char != None and (self.current_char == '.' or self.current_char in DIGITS):
             if self.current_char == '.':
                 decimal_point_count += 1
+                type_ = float
                 if decimal_point_count > 1:
                     break
 
@@ -67,4 +72,4 @@ class Lexer:
         if number_str.endswith('.'):
             number_str += '0'
 
-        return Token(TokenType.NUMBER, float(number_str))
+        return Token(TokenType.NUMBER, type_(number_str))
