@@ -1,7 +1,7 @@
 # FlowLang
 The FlowLang programming language.                                                                                                                                               
 
-This language now supports basic math.                                                                                                                                           
+This language now supports basic math and booleans.                                                                                                                             
 
 Supported operators:                                                                                                                                                             
 `+`                                                                                                                                                                             
@@ -14,4 +14,6 @@ Supported operators:
 `e` (equals)                                                                                                                                                                     
 `l` or `L` (left shift)                                                                                                                                                         
 `r` or `R` (right shift)                                                                                                                                                         
+`>`                                                                                                                                                                             
+`<`                                                                                                                                                                             
 Brackets are also supported.
