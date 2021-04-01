@@ -1,8 +1,7 @@
-from interpreter import Interpreter
-from lexer import Lexer
-from parser_ import Parser
+from AM.src.interpreter import Interpreter
+from AM.src.lexer import Lexer
+from AM.src.parser_ import Parser
 
-print('Starting Shell...')
 
 while True:
 	try:
