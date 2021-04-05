@@ -1,4 +1,4 @@
-from AM.src.values import *
+from FlowLang.src.values import *
 
 
 class Interpreter:
