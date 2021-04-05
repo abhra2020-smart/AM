@@ -1,4 +1,4 @@
-from AM.src.tokens import Token, TokenType
+from FlowLang.src.tokens import Token, TokenType
 
 WHITESPACE = ' \n\t'
 DIGITS = '0123456789'
@@ -48,21 +48,26 @@ class Lexer:
             elif self.current_char == '|':
                 self.advance()
                 yield Token(TokenType.INTDIV)
-            elif self.current_char in 'lL':
+            elif self.current_char in '<':
                 self.advance()
-                yield Token(TokenType.LS)
-            elif self.current_char in 'rR':
+                if self.current_char == '<':
+                    self.advance()
+                    yield Token(TokenType.LS)
+                else:
+                    yield Token(TokenType.ST)
+            elif self.current_char in '>':
                 self.advance()
-                yield Token(TokenType.RS)
-            elif self.current_char == '<':
+                if self.current_char == '>':
+                    self.advance()
+                    yield Token(TokenType.RS)
+                else:
+                    yield Token(TokenType.GT)
+            elif self.current_char == '=':
                 self.advance()
-                yield Token(TokenType.ST)
-            elif self.current_char == '>':
-                self.advance()
-                yield Token(TokenType.GT)
-            elif self.current_char in 'eE':
-                self.advance()
-                yield Token(TokenType.EQU)
+                if self.current_char == '=':
+                    yield Token(TokenType.EQU)
+                else:
+                    raise Exception(f"Illegal syntax")
             else:
                 raise Exception(f"Illegal character '{self.current_char}'")
 
