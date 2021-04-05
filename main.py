@@ -1,6 +1,6 @@
-from AM.src.interpreter import Interpreter
-from AM.src.lexer import Lexer
-from AM.src.parser_ import Parser
+from FlowLang.src.interpreter import Interpreter
+from FlowLang.src.lexer import Lexer
+from FlowLang.src.parser_ import Parser
 
 
 while True:
